@@ -2,12 +2,16 @@ import app from "./app.js";
 import dotenv from "dotenv";
 
 import connectDB from "./dbConnect/dbConnect.js";
+import connectCloudinary from "./config/cloudinary.js";
 
 dotenv.config({
   path: "./.env",
 });
 
 const port = process.env.PORT || 5000;
+
+//cloudinary Connection
+connectCloudinary();
 
 //Database Connection
 connectDB()
