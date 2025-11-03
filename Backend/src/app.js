@@ -1,6 +1,9 @@
 import express from "express";
 import cors from "cors";
 
+//User Routes
+import userRoutes from "./routes/user.route.js";
+
 const app = express();
 
 app.use(express.json());
@@ -15,9 +18,7 @@ app.use(
     credentials: true,
   })
 );
-
-app.get("/", (req, res) => {
-  return res.send("API working");
-});
+//User Routes
+app.use("/api/v1/user", userRoutes);
 
 export default app;
